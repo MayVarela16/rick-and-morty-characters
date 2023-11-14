@@ -19,6 +19,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -43,39 +44,127 @@ table {
 }
 
 /*--*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300&family=Raleway&family=Roboto:ital,wght@0,300;1,100&display=swap');
+
 .header-top {
   position: fixed;
   display: flex;
   width: 100%;
   background-color: #60fbbf;
+  margin-bottom: 15px;
+ 
 }
+
+
 
 .pagination {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
+  margin-top: 20px;
+  font-family:'Quicksand', sans-serif;
+  padding: 10px 0;
+  
+  
 }
 
 .pagination img {
   margin: 0 10px;
   width: 250px;
+  transition: transform 0.3s ease-in-out;
 }
+.pagination img:hover {
+  transform: scale(1.1);
+  }
 
 .boton {
   font-size: 16px;
   padding: 10px;
-  border: none;
+  border: 2px solid rgb(88, 172, 202);
   border-radius: 15px;
-  color: white;
+  color:white;
   cursor: pointer;
-  background-color: #03b1c8;
+  background-color: #60fbbf; 
+  position:relative;
+  display: block;
+  height: 50px;
+  width: 150px;
+  overflow: hidden;
+  transition: all 500ms ease;
+
+}
+.boton::before {
+  content:"";
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  background-color: rgb(88, 172, 202);
+  transition: all 500ms ease;
+  z-index: -1;
+}
+
+.boton::before{
+  width: 0;
+  height: 100%;
+}
+
+.boton:hover{
+  animation: shadow-pulse 1000ms;
+  background-color: rgb(88, 172, 202);
+  color: white
+}
+
+@keyframes shadow-pulse{
+  0% {
+  box-shadow:0 0 0 0 rgb(88, 172, 202);
+}
+100%{
+  box-shadow: 0 0 8px 16px rgb(88, 172, 202);
+}
 }
 
 ul {  
-  padding-top: 100px;
+  
   list-style: none;
+
+
 }
 
+#character-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px 0;
+}
 
+#character-list li {
+  font-family:'Quicksand', sans-serif;
+  background-color: #fff;
+  border: 1px dashed  #60fbbf;
+  color: rgb(88, 172, 202);
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+#character-list img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#character-list img:hover {
+  transform: scale(1.1);
+  }
+
+  
+  
 
